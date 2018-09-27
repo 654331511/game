@@ -64,7 +64,7 @@
           <!-- BEGIN SEARCH -->
           <div id="search">
             <form action="#" />
-            <input type="text" name="search" value="search here..." />
+            <input type="text" name="search" placeholder="搜索" />
           </form>
         </div>
         <!-- END SEARCH -->
