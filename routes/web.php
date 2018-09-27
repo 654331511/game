@@ -44,12 +44,11 @@ Route::get('/column', function () {
 Route::get('/info', function () {
     return view('man.info');
 });
-Route::get('/list', function () {
+Route::get('/list', function(){
     return view('man.list');
 });
-Route::get('/adlogin', function () {
-    return view('man.login');
-});
+Route::get('/adlogin', 'Admin\LoginController@index');
+Route::post('/login', 'Admin\LoginController@login');
 Route::get('/page', function () {
     return view('man.page');
 });

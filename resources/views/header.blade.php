@@ -55,18 +55,17 @@
         <div id="navigation-wrapper">
           <ul id="navigation">
             <li><a href="/index.html">主页</a></li>
-            <li><a href="#">游戏</a>
-            </li>
-            <li><a href="#">动漫</a>
-            </li>
+            <li><a href="#">游戏</a></li>
+            <li><a href="#">动漫</a></li>
+            <li><a href="#">影视</a></li>
           </ul>
 
           <!-- BEGIN SEARCH -->
           <div id="search">
             <form action="#" />
-            <input type="text" name="search" placeholder="搜索" />
-          </form>
-        </div>
+              <input type="text" name="search" placeholder="搜索" />
+            </form>
+          </div>
         <!-- END SEARCH -->
 
       </div>

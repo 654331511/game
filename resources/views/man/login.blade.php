@@ -24,21 +24,21 @@
 		<h1>登录</h1>
 		 <div class="alert-close"> </div>
 	</div>
-		<form>
+		<form action="/login" method="post">
 			<li>
-				<input type="text" class="text" value="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'username';}"><a href="#" class=" icon user"></a>
+				<input type="text" class="text" name="name" placeholder="name" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'username';}"><a href="#" class=" icon user"></a>
 			</li>
 				<div class="clear"> </div>
 			<li>
-				<input type="password" value="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"> <a href="#" class="icon lock"></a>
+				<input type="password" placeholder="password" name="password" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'password';}"> <a href="#" class="icon lock"></a>
 			</li>
 			<div class="clear"> </div>
 			<div class="submit">
 				<input type="submit" value="登录" >
 				<h4><a href="#">忘记密码?</a></h4>
-						  <div class="clear">  </div>
+				<div class="clear">
+				</div>
 			</div>
-
 		</form>
 		</div>
 	</div>

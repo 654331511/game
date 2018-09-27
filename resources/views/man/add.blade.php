@@ -12,6 +12,7 @@
 <script src="/adminjs/pintuer.js"></script>
 </head>
 <body>
+@include('vendor.UEditor.head')
 <div class="panel admin-panel">
   <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加内容</strong></div>
   <div class="body-content">
@@ -27,16 +28,14 @@
       </div>
       <div class="form-group">
         <div class="label">
-          <label>图片：</label>
+          <label>首页图片：</label>
         </div>
         <div class="field">
           <input type="text" id="url1" name="img" class="input tips" style="width:25%; float:left;"  value=""  data-toggle="hover" data-place="right" data-image="" />
           <input type="button" class="button bg-blue margin-left" id="image1" value="+ 浏览上传"  style="float:left;">
-          <div class="tipss">图片尺寸：500*500</div>
+          <div class="tipss">图片尺寸：600*300</div>
         </div>
       </div>
-
-      <if condition="$iscid eq 1">
         <div class="form-group">
           <div class="label">
             <label>分类标题：</label>
@@ -52,7 +51,7 @@
             <div class="tips"></div>
           </div>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
           <div class="label">
             <label>其他属性：</label>
           </div>
@@ -60,10 +59,8 @@
             首页 <input id="ishome"  type="checkbox" />
             推荐 <input id="isvouch"  type="checkbox" />
             置顶 <input id="istop"  type="checkbox" />
-
           </div>
-        </div>
-      </if>
+        </div> -->
       <div class="form-group">
         <div class="label">
           <label>描述：</label>
@@ -78,7 +75,9 @@
           <label>内容：</label>
         </div>
         <div class="field">
-          <textarea name="content" class="input" style="height:450px; border:1px solid #ddd;"></textarea>
+          <!-- <textarea name="content" class="input" style="height:450px; border:1px solid #ddd;"></textarea> -->
+          <script id="container" name="content" type="text/plain" style="height:600px;">
+          </script>
           <div class="tips"></div>
         </div>
       </div>
@@ -157,4 +156,8 @@
   </div>
 </div>
 
-</body></html>
+</body>
+<script type="text/javascript">
+    var ue = UE.getEditor('container');
+</script>
+</html>
