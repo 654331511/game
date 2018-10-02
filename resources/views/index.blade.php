@@ -1,5 +1,5 @@
 @include('header')
-
+<script type="text/javascript" src="/js/jquery.SuperSlide.2.1.1.source.js"></script>
 <!-- BEGIN SLIDER -->
 <div class="slider">
   <div class="sliderContent">
@@ -78,131 +78,36 @@
       <h3 class="section-title">今日要闻</h3>
 
       <!-- BEGIN NEWS ITEM -->
+      @foreach($content as $key)
       <div class="news-item">
-
         <div class="news-thumb-wrapper">
-
-          <a href="/news-post.html"><img src="/images/newsthumb.jpg" alt="" /></a>
-
+          <a href="/news/{{$key->id}}" target="_blank"><img src="{{$key->homepage}}" alt="" /></a>
           <div class="news-arrows"></div>
-          <h1><a href="/news-post.html">Interview with Bulletstorm creator</a></h1>
-
+          <h1><a href="/news/{{$key->id}}" target="_blank">{{$key->hometitle}}</a></h1>
         </div>
-
         <div class="news-meta-wrapper">
-          <span class="news-meta">By Sebastian Rosenkvist, March 14, 2011</span>
-          <span class="news-cats"><a href="#">Xbox 360</a>, <a href="#">PS3</a></span>
+          <span class="news-meta">{{$key->time}}</span>
         </div>
+        <p>{{$key->homecon}}<a href="/news/{{$key->id}}" target="_blank">查看更多</a></p>
+      </div>
+      @endforeach
+      <!-- END NEWS ITEM -->
+    </div>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore agna alqua. Ut enim ad miim veiam, quis... <a href="#">Read More</a></p>
-
-        </div>
-        <!-- END NEWS ITEM -->
-
-        <!-- BEGIN NEWS ITEM -->
-        <div class="news-item">
-
-          <div class="news-thumb-wrapper">
-
-            <a href="/news-post.html"><img src="/images/newsthumb5.jpg" alt="" /></a>
-
-            <div class="news-arrows"></div>
-            <h1><a href="/news-post.html">Diablo 3 release date rumors</a></h1>
-
-          </div>
-
-          <div class="news-meta-wrapper">
-            <span class="news-meta">By Sebastian Rosenkvist, March 14, 2011</span>
-            <span class="news-cats"><a href="#">Xbox 360</a>, <a href="#">PS3</a></span>
-          </div>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore agna alqua. Ut enim ad miim veiam, quis... <a href="#">Read More</a></p>
-
-          </div>
-          <!-- END NEWS ITEM -->
-
-          <!-- BEGIN NEWS ITEM -->
-          <div class="news-item">
-
-            <div class="news-thumb-wrapper">
-
-              <a href="/news-post.html"><img src="/images/newsthumb3.jpg" alt="" /></a>
-
-              <div class="news-arrows"></div>
-              <h1><a href="/news-post.html">Starcraft 2 patch 1.3.0 now available</a></h1>
-
-            </div>
-
-            <div class="news-meta-wrapper">
-              <span class="news-meta">By Sebastian Rosenkvist, March 14, 2011</span>
-              <span class="news-cats"><a href="#">Xbox 360</a>, <a href="#">PS3</a></span>
-            </div>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua. Ut enim ad minim veniam, quis. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore agna alqua. Ut enim ad miim veiam, quis... <a href="#">Read More</a></p>
-
-            </div>
-            <!-- END NEWS ITEM -->
-
-            <!-- BEGIN NEWS ITEM -->
-            <div class="news-item">
-
-              <div class="news-thumb-wrapper">
-
-                <a href="/news-post.html"><img src="/images/newsthumb6.jpg" alt="" /></a>
-
-                <div class="news-arrows"></div>
-                <h1><a href="/news-post.html">Homefront sells over 300.000 units in first day</a></h1>
-
-              </div>
-
-              <div class="news-meta-wrapper">
-                <span class="news-meta">By Sebastian Rosenkvist, March 14, 2011</span>
-                <span class="news-cats"><a href="#">Xbox 360</a>, <a href="#">PS3</a></span>
-              </div>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore agna alqua. Ut enim ad miim veiam, quis... <a href="#">Read More</a></p>
-
-              </div>
-              <!-- END NEWS ITEM -->
-
-              <!-- BEGIN NEWS ITEM -->
-              <div class="news-item">
-
-                <div class="news-thumb-wrapper">
-
-                  <a href="/news-post.html"><img src="/images/newsthumb4.jpg" alt="" /></a>
-
-                  <div class="news-arrows"></div>
-                  <h1><a href="/news-post.html">Madden NFL 12 teaser</a></h1>
-
-                </div>
-
-                <div class="news-meta-wrapper">
-                  <span class="news-meta">By Sebastian Rosenkvist, March 14, 2011</span>
-                  <span class="news-cats"><a href="#">Xbox 360</a>, <a href="#">PS3</a></span>
-                </div>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua. Ut enim ad minim veniam, quis. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore agna alqua. Ut enim ad miim veiam, quis... <a href="#">Read More</a></p>
-
-                </div>
-                <!-- END NEWS ITEM -->
-
-              </div>
               <!-- END NEWS WRAPPER -->
 
               <!-- BEGIN PAGINATION -->
               <div id="pagination">
-
+              @if($content->currentPage() == 1)
+              <span class="current">{{$content->currentPage()}}</span>
+              <a href="{{$content->nextPageUrl()}}"><span>下一页</span></a>
+              <a href="{{$content->lastPage()}}"><span>尾页</span></a>
+              @else
+              <a href="/"><span>首页</span></a>
+              <a href="{{$content->previousPageUrl()}}"><span>上一页</span></a>
+              @endif
+            </div>
+              <!-- <div id="pagination">
                 <span class="current">1</span>
                 <a href="#"><span>2</span></a>
                 <a href="#"><span>3</span></a>
@@ -212,8 +117,7 @@
                 <a href="#"><span>7</span></a>
                 <a href="#"><span>8</span></a>
                 <a href="#"><span>Next</span></a>
-
-              </div>
+              </div> -->
               <!-- END PAGINATION -->
 
             </div>

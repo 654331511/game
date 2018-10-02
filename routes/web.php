@@ -11,21 +11,16 @@
 |
 */
 //前台路由
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/news', function () {
-    return view('news');
-});
+Route::get('/', 'IndexController@index');
+Route::get('/{page}', 'IndexController@index');
+Route::get('/news/{id}','IndexController@news');
 
 //后台路由
 Route::get('/man', function () {
     return view('man.index');
 });
-Route::get('/add', function () {
-    return view('man.add');
-});
+Route::get('/add', 'Admin\AddController@index');
+Route::post('/insert', 'Admin\AddController@insert');
 Route::get('/adv', function () {
     return view('man.adv');
 });

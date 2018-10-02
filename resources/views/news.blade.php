@@ -8,22 +8,17 @@
 
 			<!-- BEGIN POST -->
 			<div id="post">
-
-				<p class="post-meta">来源:原创&nbsp&nbsp&nbsp&nbsp作者:ABC&nbsp&nbsp&nbsp&nbsp点击量:100&nbsp&nbsp&nbsp&nbsp2018-09-26 20:41:03</a></p>
-
-				<h1 class="post-header">Dead Space 2 breaks all sales records</h1>
-
+				@foreach($newsinfo as $key)
+				<p class="post-meta">来源:{{$key->source}}&nbsp&nbsp&nbsp&nbsp作者:{{$key->author}}&nbsp&nbsp&nbsp&nbsp点击量:{{$key->clicks}}&nbsp&nbsp&nbsp&nbsp{{$key->time}}</a></p>
+				<h1 class="post-header">{{$key->title}}</h1>
 				<div class="post-thumb">
 					<img src="/images/post-img.jpg" alt="" />
 				</div>
-
 				<div class="post-entry">
-					<p>Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat orci magna rhoncus neque, volutpat. Nullam sit amet enim.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-					<p>Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat orci magna rhoncus neque, volutpat. Nullam sit amet enim.</p>
+					{!! $key->content !!}
 				</div>
-
-				<div class="post-share">
+				@endforeach
+				<!-- <div class="post-share">
 					<p>SHARE THIS POST</p>
 					<ul>
 						<li><a href="#"><img src="/images/rss-big.png" alt="" /></a></li>
@@ -38,106 +33,72 @@
 						<li><a href="#"><img src="/images/digg.png" alt="" /></a></li>
 						<li><a href="#"><img src="/images/technorati.png" alt="" /></a></li>
 					</ul>
-				</div>
+				</div> -->
 
 				<!-- BEGIN COMMENTS -->
 				<div id="comments">
-
 					<h3><strong>4 Comments</strong> on "Dead Space 2 breaks all sales records"</h3>
-
 					<ol>
-
 						<li>
-
 							<div class="comment">
-
 								<div class="avatar">
 									<img src="/images/avatar.jpg" alt="" />
 								</div>
-
 								<div class="comment-details">
 									<span class="author">John Doe</span>
 									<span class="date">- March 9, 2011 at 3:43pm</span>
 									<span class="reply"><a href="#">Reply</a></span>
-
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-
 								</div>
-
 							</div>
-
 							<ul>
 								<li>
-
 									<div class="comment">
-
 										<div class="avatar">
 											<img src="/images/avatar.jpg" alt="" />
 										</div>
-
 										<div class="comment-details">
 											<span class="author"><a href="#">John Doe</a></span>
 											<span class="date">- March 9, 2011 at 3:43pm</span>
 											<span class="reply"><a href="#">Reply</a></span>
-
 											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-
 										</div>
-
 									</div>
-
 									<ul>
-
 										<li>
-
 											<div class="comment">
-
 												<div class="avatar">
 													<img src="/images/avatar.jpg" alt="" />
 												</div>
-
 												<div class="comment-details">
 													<span class="author">John Doe</span>
 													<span class="date">- March 9, 2011 at 3:43pm</span>
 													<span class="reply"><a href="#">Reply</a></span>
-
 													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-
 												</div>
-
 											</div>
+										</li>
+										<li>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						</li>
 
-										</li><li>
-
-									</li></ul>
-
-
-							</li></ul>
-
-
-
-						</li><li>
-
+						<li>
 							<div class="comment">
-
 								<div class="avatar">
 									<img src="/images/avatar.jpg" alt="" />
 								</div>
-
 								<div class="comment-details">
 									<span class="author">John Doe</span>
 									<span class="date">- March 9, 2011 at 3:43pm</span>
 									<span class="reply"><a href="#">Reply</a></span>
-
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-
 								</div>
-
 							</div>
-
 						</li>
-
 					</ol>
 
 					<h3><strong>Leave a Comment</strong></h3>

@@ -5,7 +5,6 @@
   <title>漫游社</title>
   <link rel="stylesheet" href="/css/style.css" />
   <script type="text/javascript" src="/js/jquery1.42.min.js"></script>
-  <script type="text/javascript" src="/js/jquery.SuperSlide.2.1.1.source.js"></script>
   <script type="text/javascript" src="/js/superfish.js"></script>
   <script type="text/javascript" src="/js/mobilyslider.js"></script>
   <script type="text/javascript" src="/js/init.js"></script>
@@ -27,16 +26,16 @@
 
         <!-- BEGIN TOP NAVIGATION -->
         <ul id="top-navigation">
-          <li><a href="/index.html">主页</a></li>
+          <li><a href="/" target="_blank">主页</a></li>
         </ul>
         <!-- END TOP NAVIGATION -->
 
         <!-- BEGIN SOCIAL MEDIA -->
-        <div id="social-media">
-          <a href="#"><img src="/images/facebook.png" alt="" /></a>
-          <a href="#"><img src="/images/twitter.png" alt="" /></a>
-          <a href="#"><img src="/images/rss.png" alt="" /></a>
-        </div>
+        <!-- <div id="social-media">
+          <a href="#">登录</a>
+          <span>|</span>
+          <a href="#">注册</a>
+        </div> -->
         <!-- END SOCIAL MEDIA -->
 
         <!-- BEGIN LOGO -->
@@ -54,7 +53,7 @@
         <!-- BEGIN NAVIGATION -->
         <div id="navigation-wrapper">
           <ul id="navigation">
-            <li><a href="/index.html">主页</a></li>
+            <li><a href="/">主页</a></li>
             <li><a href="#">游戏</a></li>
             <li><a href="#">动漫</a></li>
             <li><a href="#">影视</a></li>

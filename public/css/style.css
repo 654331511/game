@@ -412,7 +412,7 @@ q:before, q:after { content:''}
 /* The below restores some sensible defaults */
 strong { font-weight: bold }
 em { font-style: italic }
-a img { border:none } /* Gets rid of IE's blue borders */
+a img { border:none; width:100%;} /* Gets rid of IE's blue borders */
 /***     1. General Styles     ***/
 body { background:#dadada; font: 12px Arial, sans-serif; color: #3a3a3a; }
 a { color:#006acd; text-decoration:none; }
@@ -424,12 +424,14 @@ a:hover { text-decoration:underline; }
 #logo { position:absolute; top:41px; left:0; }
 #header-banner { position:absolute; right:0; top:63px; }
 #social-media { float:right; padding-top:7px; }
+#social-media a{ color: #7d7d7d; text-decoration: none; }
+#social-media a:hover { visibility: inherit; color:white;/* fixes IE7 'sticky bug' */ }
 
 	/*     2.1. Top Navigation     */
 	#top-navigation { height:24px; padding-top:8px; float:left; }
 	#top-navigation li { float:left; display:block; margin-right:20px; text-shadow: 1px 1px 1px #000; position:relative; height:24px; z-index:100; }
 	#top-navigation li a { display:block; color:#7d7d7d; }
-	#top-navigation li:hover { visibility: inherit; /* fixes IE7 'sticky bug' */ }
+  #top-navigation li a:hover { visibility: inherit; color:white;/* fixes IE7 'sticky bug' */ }
 
 	#top-navigation li ul { left:-999px; position:absolute; z-index:1; top:24px; border:1px solid #000; border-top:none; width:140px; background:#121212; }
 	#top-navigation li ul li { float:none; background:url(/images/nav-item-bg.png) repeat-x; height:25px; margin:0; padding:9px 0 0 10px; text-shadow: 1px 1px 1px #000; }
@@ -464,13 +466,15 @@ a:hover { text-decoration:underline; }
 	/*     2.3. Search     */
 	#search { float:right; width:163px; height:25px; background:url(/images/search-bg.png) no-repeat; margin-top:7px; padding:6px 0 0 9px; }
 	#search input { background:none; border:none; color:#555555; width:130px; }
+	#search input:focus { outline: none; }
+	input:focus::-webkit-input-placeholder { color:transparent; }
 
 /***     3. Featured Section     ***/
 .slider { position:relative; background:#000; z-index:1; }
 .sliderContent { overflow:hidden; height:280px; position:relative; }
 .featured-inner { width:960px; margin:0 auto; position:relative;}
 .featured-arrows { background:url(/images/featured-arrows.png) no-repeat; height:52px; width:39px; position:absolute; top:160px; }
-.featured-inner h1 { position:absolute; top:160px; left:39px; background:#000; color:#FFF; font-size:34px; padding:7px 10px 3px 10px; font-family:"BebasNeueRegular"; }
+.featured-inner h1 { position:absolute; top:160px; left:39px; background:#000; color:#FFF; font-size:34px; padding:3px 10px 3px 10px; font-family:"BebasNeueRegular"; }
 .featured-inner h1 a { color:#FFF; }
 .featured-meta { background:url(/images/featured-meta.png) repeat-x; height:26px; left:0; top:211px; position:absolute; color:#8e8e8e; text-shadow: 1px 1px 1px #000; text-transform: uppercase; padding:8px 10px 0 10px; }
 .top-overlay { background:url(/images/top-overlay.png) repeat-x; width:100%; position:absolute; top:0; height:30px; }
@@ -490,13 +494,13 @@ a:hover { text-decoration:underline; }
 	#news-wrapper { margin-bottom:24px; }
 	.news-item { border-bottom:1px solid #DDD; margin-bottom:30px; padding-bottom:25px; }
 	.news-thumb-wrapper { position:relative; }
-	.news-thumb-wrapper h1 { position:absolute; color:#FFF; left:40px; top:220px; background:#000; padding:8px 9px 7px 9px; font-size:24px; font-family:BebasNeueRegular; }
+	.news-thumb-wrapper h1 { position:absolute; color:#FFF; left:40px; bottom:30px; background:#000; padding:6px 9px 6px 9px; font-size:24px; font-family:BebasNeueRegular; }
 	.news-thumb-wrapper h1 a { color:#FFF; }
 	.news-thumb { border:1px solid #CCC; margin-right:12px; float:left; }
-	.news-arrows { position:absolute; left:0; top:220px; height:44px; width:40px; background:url(/images/news-arrows.png) no-repeat; }
-	.news-meta-wrapper { background:url(/images/section-title.png) repeat; height:25px; border-bottom:1px solid #CCC; margin-top:-3px; padding:9px 9px 0 9px; margin-bottom:12px; }
+	.news-arrows { position:absolute; left:0; bottom:30px; height:44px; width:40px; background:url(/images/news-arrows.png) no-repeat; }
+	.news-meta-wrapper { background:url(/images/section-title.png) repeat; border-bottom:1px solid #CCC; margin-top:-3px; padding:9px 9px 6px 9px; margin-bottom:12px; }
 	.news-meta-wrapper span { text-shadow: 1px 1px 1px #FFF; font-weight:bold; text-transform: uppercase; letter-spacing:1px; }
-	.news-meta { color:#777; float:left; }
+	.news-meta { color:#777;}
 	.news-cats { float:right; }
 	.news-item p { line-height:18px; }
 

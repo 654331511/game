@@ -14,15 +14,24 @@
 <body>
 @include('vendor.UEditor.head')
 <div class="panel admin-panel">
-  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加内容</strong></div>
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>添加文章</strong></div>
   <div class="body-content">
-    <form method="post" class="form-x" action="">
+    <form method="post" class="form-x" action="/insert" enctype="multipart/form-data">
+      <div class="form-group">
+        <div class="label">
+          <label>首页标题：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" name="hometitle" data-validate="required:请输入首页标题" />
+          <div class="tips"></div>
+        </div>
+      </div>
       <div class="form-group">
         <div class="label">
           <label>标题：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" value="" name="title" data-validate="required:请输入标题" />
+          <input type="text" class="input w50" name="title" data-validate="required:请输入标题" />
           <div class="tips"></div>
         </div>
       </div>
@@ -31,22 +40,20 @@
           <label>首页图片：</label>
         </div>
         <div class="field">
-          <input type="text" id="url1" name="img" class="input tips" style="width:25%; float:left;"  value=""  data-toggle="hover" data-place="right" data-image="" />
-          <input type="button" class="button bg-blue margin-left" id="image1" value="+ 浏览上传"  style="float:left;">
+          <!-- <input type="text" id="url1" name="homepage" class="input tips" style="width:25%; float:left;"  value=""  data-toggle="hover" data-place="right" data-image="" /> -->
+          <input type="file" name="homepage" class="button bg-blue margin-left" id="image1" value="+ 浏览上传"  style="float:left;">
           <div class="tipss">图片尺寸：600*300</div>
         </div>
       </div>
         <div class="form-group">
           <div class="label">
-            <label>分类标题：</label>
+            <label>文章分类：</label>
           </div>
           <div class="field">
-            <select name="cid" class="input w50">
-              <option value="">请选择分类</option>
-              <option value="">产品分类</option>
-              <option value="">产品分类</option>
-              <option value="">产品分类</option>
-              <option value="">产品分类</option>
+            <select name="sort" class="input w50">
+              @foreach($sortname as $key)
+                <option value="{{$key}}">{{$key}}</option>
+              @endforeach
             </select>
             <div class="tips"></div>
           </div>
@@ -63,10 +70,10 @@
         </div> -->
       <div class="form-group">
         <div class="label">
-          <label>描述：</label>
+          <label>首页描述：</label>
         </div>
         <div class="field">
-          <textarea class="input" name="note" style=" height:90px;"></textarea>
+          <textarea class="input" name="homecon" style=" height:90px;"></textarea>
           <div class="tips"></div>
         </div>
       </div>
@@ -85,44 +92,10 @@
       <div class="clear"></div>
       <div class="form-group">
         <div class="label">
-          <label>关键字标题：</label>
+          <label>来源：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_title" value="" />
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="label">
-          <label>内容关键字：</label>
-        </div>
-        <div class="field">
-          <input type="text" class="input" name="s_keywords" value=""/>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="label">
-          <label>关键字描述：</label>
-        </div>
-        <div class="field">
-          <textarea type="text" class="input" name="s_desc" style="height:80px;"></textarea>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="label">
-          <label>排序：</label>
-        </div>
-        <div class="field">
-          <input type="text" class="input w50" name="sort" value="0"  data-validate="number:排序必须为数字" />
-          <div class="tips"></div>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="label">
-          <label>发布时间：</label>
-        </div>
-        <div class="field">
-          <script src="js/laydate/laydate.js"></script>
-          <input type="text" class="laydate-icon input w50" name="datetime" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" value=""  data-validate="required:日期不能为空" style="padding:10px!important; height:auto!important;border:1px solid #ddd!important;" />
+          <input type="text" class="input w50" name="source" value=""  />
           <div class="tips"></div>
         </div>
       </div>
@@ -131,16 +104,16 @@
           <label>作者：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" name="authour" value=""  />
+          <input type="text" class="input w50" name="author" value=""  />
           <div class="tips"></div>
         </div>
       </div>
       <div class="form-group">
         <div class="label">
-          <label>点击次数：</label>
+          <label>点击量：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" name="views" value="" data-validate="member:只能为数字"  />
+          <input type="text" class="input w50" name="clicks" value="" data-validate="member:只能为数字"  />
           <div class="tips"></div>
         </div>
       </div>
