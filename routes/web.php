@@ -12,9 +12,9 @@
 */
 //前台路由
 Route::get('/', 'IndexController@index');
-Route::get('/{page}', 'IndexController@index');
+Route::get('/{page}', 'IndexController@index')->where('page','[0-9]+');
 Route::get('/news/{id}','IndexController@news');
-
+Route::get('/danmu','IndexController@danmu');
 //后台路由
 Route::get('/man', function () {
     return view('man.index');
