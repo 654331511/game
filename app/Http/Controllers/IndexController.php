@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Admin\Article;
+use App\Admin\Comment;
 class IndexController extends Controller
 {
       public function index()
@@ -16,32 +17,14 @@ class IndexController extends Controller
           $newsinfo = Article::select(['title','content','source','author','clicks','time','check'])->where('id',$id)->get();
           return view('news',['newsinfo' => $newsinfo]);
       }
-      public function danmu()
+      public function danmu(Request $request)
       {
-          // $array = array('msg'=>'添加失败!','status'=>'false');
-          // return json_encode($array);
-          $barrages=
-          array(
-          	array(
-          		'info'   => '第一条弹幕',
-              'color'  =>  '#FFFFFF',
-          		),
-          	array(
-          		'info'   => '第二条弹幕',
-          		'color'  =>  '#FFFFFF',
-          		),
-          	array(
-          		'info'   => '第三条弹幕',
-          		'bottom' => 70 ,
-              'color'  =>  '#FFFFFF',
-
-          		),
-          	array(
-          		'info'   => '第四条弹幕',
-          		'close'  =>false,
-              'color'  =>  '#FFFFFF',
-          		),
-          	);
-          echo  json_encode($barrages[array_rand($barrages)]);
+          $id = $request->input('id');
+          $comment = Comment::select(['info'])->where('pid',0)->where('a_id',$id)->get();
+          $num = rand(0,count($comment)-1);
+          for ($i=0; $i <count($comment) ; $i++) {
+              $comment[$i]['color'] = '#FFFFFF';
+          }
+          return $comment[$num];
       }
 }

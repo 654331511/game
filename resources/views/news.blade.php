@@ -2,6 +2,8 @@
 <link rel="stylesheet" type="text/css" href="/dist/css/barrager.css">
 <script type="text/javascript" src="/dist/js/jquery.barrager.min.js"></script>
 <script type="text/javascript">
+	var url = window.location.href;
+	var url_param = url.split("/")[4];
 	//每条弹幕发送间隔
 	var looper_time=3*1000;
 	//是否首次执行
@@ -14,11 +16,14 @@
 			run_once=false;
 	}
 	//获取
-	$.getJSON('/danmu',function(data){
-			//是否有数据
-			if(data.info){
-				$('body').barrager(data);
-			}
+	$.ajax({
+		url: '/danmu',
+		type:'get',
+		datatype:'json',
+		data: {id: url_param},
+		success:function(data) {
+			$('body').barrager(data);
+		}
 	});
 	}
 
