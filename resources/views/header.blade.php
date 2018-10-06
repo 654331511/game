@@ -2,21 +2,12 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>漫游社</title>
+  <title>漫点玩</title>
   <link rel="stylesheet" href="/css/style.css" />
   <script type="text/javascript" src="/js/jquery1.42.min.js"></script>
-  <script type="text/javascript" src="/js/superfish.js"></script>
   <script type="text/javascript" src="/js/mobilyslider.js"></script>
   <script type="text/javascript" src="/js/init.js"></script>
-  <script type="text/javascript" src="/js/jquery.fancybox-1.3.4.pack.js"></script>
-  <script type="text/javascript" src="/js/jquery.scrollTo.js"></script>
-  <script type="text/javascript" src="/js/scripts.js"></script>
-  <script>
-  $(document).ready(function() {
-    $('ul#navigation').superfish();
-    $('ul#top-navigation').superfish();
-  });
-  </script>
+</head>
   <body>
 
     <!-- BEGIN HEADER -->
