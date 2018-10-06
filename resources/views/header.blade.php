@@ -7,6 +7,9 @@
   <script type="text/javascript" src="/js/jquery1.42.min.js"></script>
   <script type="text/javascript" src="/js/mobilyslider.js"></script>
   <script type="text/javascript" src="/js/init.js"></script>
+  <script type="text/javascript" src="/js/scripts.js"></script>
+	<script type="text/javascript" src="./js/jquery.fancybox-1.3.4.pack.js"></script>
+	<script type="text/javascript" src="./js/jquery.scrollTo.js"></script>
 </head>
   <body>
 
