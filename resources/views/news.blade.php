@@ -1,13 +1,105 @@
-@include('header')
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>漫点玩</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script type="text/javascript" src="/js/jquery1.42.min.js"></script>
+  <!-- <script type="text/javascript" src="/js/mobilyslider.js"></script>
+  <script type="text/javascript" src="/js/init.js"></script>
+  <script type="text/javascript" src="/js/scripts.js"></script>
+	<script type="text/javascript" src="./js/jquery.fancybox-1.3.4.pack.js"></script>
+	<script type="text/javascript" src="./js/jquery.scrollTo.js"></script> -->
+</head>
+  <body>
+    <!-- 弹幕按钮 -->
+    <div class="switch">关闭弹幕</div>
+    <!-- BEGIN HEADER -->
+    <div id="header-wrapper">
+
+      <div id="header">
+
+        <!-- BEGIN TOP NAVIGATION -->
+        <ul id="top-navigation">
+          <li><a href="/" target="_blank">主页</a></li>
+        </ul>
+        <!-- END TOP NAVIGATION -->
+
+        <!-- BEGIN SOCIAL MEDIA -->
+        <!-- @if (request()->cookie('username') == '')
+        <div id="social-media">
+          <a href="/ulogin">登录</a>
+          <span>|</span>
+          <a href="/register">注册</a>
+        </div>
+        @else
+        <div id="social-media">
+          <a href="#">{{ request()->cookie('username') }}</a>
+          <span>|</span>
+          <a href="/logout">退出</a>
+        </div>
+        @endif -->
+        <!-- END SOCIAL MEDIA -->
+
+        <!-- BEGIN LOGO -->
+        <div id="logo">
+          <a href="/index.html"><img src="/images/logo.png" alt="LeetPress" /></a>
+        </div>
+        <!-- END LOGO -->
+
+        <!-- BEGIN HEADER BANNER -->
+        <div id="header-banner">
+          <img src="/images/header-banner.png" alt="" />
+        </div>
+        <!-- END HEADER BANNER -->
+
+        <!-- BEGIN NAVIGATION -->
+        <div id="navigation-wrapper">
+          <ul id="navigation">
+            <li><a href="/">主页</a></li>
+            <li><a href="#">游戏</a></li>
+            <li><a href="#">动漫</a></li>
+            <li><a href="#">影视</a></li>
+          </ul>
+
+          <!-- BEGIN SEARCH -->
+          <div id="search">
+            <form action="#" />
+              <input type="text" name="search" placeholder="搜索" />
+            </form>
+          </div>
+        <!-- END SEARCH -->
+
+      </div>
+      <!-- END NAVIGATION -->
+
+    </div>
+
+  </div>
+  <!-- END HEADER -->
 <link rel="stylesheet" type="text/css" href="/dist/css/barrager.css">
 <script type="text/javascript" src="/dist/js/jquery.barrager.min.js"></script>
 <script type="text/javascript">
+
+$(".switch").click(function(event) {
+  if ($(".switch").html() == "关闭弹幕") {
+    $.fn.barrager.removeAll();
+    clearInterval(looper);
+    looper = null;
+    $(".switch").html("开启弹幕");
+  }else {
+    run_once=true;
+    looper_time=3*1000;
+    do_barrager();
+    $(".switch").html("关闭弹幕");
+  }
+});
 	var url = window.location.href;
 	var url_param = url.split("/")[4];
 	//每条弹幕发送间隔
 	var looper_time=3*1000;
 	//是否首次执行
-	var run_once=true;
+  var run_once=true;
 	do_barrager();
 	function do_barrager(){
 	if(run_once){
@@ -27,7 +119,9 @@
 	});
 	}
 
+
 </script>
+
 	<!-- BEGIN MAIN WRAPPER -->
 	<div id="main-wrapper">
 
@@ -224,6 +318,8 @@
 		</div>
 		<!-- END SIDEBAR -->
 
+
+
 	<!-- END MAIN WRAPPER -->
 
 	<!-- BEGIN FOOTER TOP -->
@@ -320,7 +416,6 @@
 		<div id="footer-bottom">
 
 			<span class="footer-bottom-left">Copyright (C) 2011 - LeetPress. All rights reserved.</span>
-			<span class="footer-bottom-right">Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></span>
 
 		</div>
 		<!-- END FOOTER BOTTOM -->
@@ -328,6 +423,16 @@
 	</div>
 	<!-- END FOOTER BOTTOM WRAPPER -->
 
-</body>
 
+</body>
+<script type="text/javascript">
+	// var btn = document.getElementsByClassName("switch");
+	// btn[0].addEventListener("click",toggle,false);
+	// function toggle(){
+	// 	var text = btn[0].innerHTML;
+	// 	btn[0].innerHTML = text == "关闭弹幕"?"开启弹幕":"关闭弹幕";
+	// }
+	// $.fn.barrager.removeAll();
+
+</script>
 </html>

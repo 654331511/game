@@ -9,7 +9,7 @@
       <div class="featured-inner">
         <div class="featured-inner">
           <div class="featured-arrows"></div>
-          <h1><a href="/news-post.html">死亡空间</a></h1>
+          <h1><a href="#">死亡空间</a></h1>
           <p class="featured-meta">By Sebastian Rosenkvist, March 14, 2011</p>
         </div>
       </div>
@@ -21,7 +21,7 @@
       <div class="featured-inner">
         <div class="featured-inner">
           <div class="featured-arrows"></div>
-          <h1><a href="/news-post.html">子弹风暴</a></h1>
+          <h1><a href="#">子弹风暴</a></h1>
           <p class="featured-meta">By John Doe, March 14, 2011</p>
         </div>
       </div>
@@ -33,7 +33,7 @@
       <div class="featured-inner">
         <div class="featured-inner">
           <div class="featured-arrows"></div>
-          <h1><a href="/news-post.html">暗黑破坏神3</a></h1>
+          <h1><a href="#">暗黑破坏神3</a></h1>
           <p class="featured-meta">By Sebastian Rosenkvist, March 14, 2011</p>
         </div>
       </div>
@@ -48,7 +48,7 @@
         <div class="featured-inner">
 
           <div class="featured-arrows"></div>
-          <h1><a href="/news-post.html">我的世界</a></h1>
+          <h1><a href="#">我的世界</a></h1>
           <p class="featured-meta">By Sebastian Rosenkvist, March 14, 2011</p>
 
         </div>
@@ -428,31 +428,31 @@
 
                 <div class="side-item">
                   <img src="/images/newsthumbside.jpg" alt="" class="side-item-thumb" />
-                  <h4><a href="/news-post.html">Interview with Bulletstorm creator</a></h4>
+                  <h4><a href="#">Interview with Bulletstorm creator</a></h4>
                   <span class="side-item-meta">March 14, 2011 - 32 Comments</span>
                 </div>
 
                 <div class="side-item">
                   <img src="/images/newsthumbside2.jpg" alt="" class="side-item-thumb" />
-                  <h4><a href="/news-post.html">Minecraft sells over 1 million copies in one year</a></h4>
+                  <h4><a href="#">Minecraft sells over 1 million copies in one year</a></h4>
                   <span class="side-item-meta">March 14, 2011 - 32 Comments</span>
                 </div>
 
                 <div class="side-item">
                   <img src="/images/newsthumbside3.jpg" alt="" class="side-item-thumb" />
-                  <h4><a href="/news-post.html">New Dragon Age 2 screenshots</a></h4>
+                  <h4><a href="#">New Dragon Age 2 screenshots</a></h4>
                   <span class="side-item-meta">March 14, 2011 - 32 Comments</span>
                 </div>
 
                 <div class="side-item">
                   <img src="/images/newsthumbside4.jpg" alt="" class="side-item-thumb" />
-                  <h4><a href="/news-post.html">FIFA 11 World Cup coverage</a></h4>
+                  <h4><a href="#">FIFA 11 World Cup coverage</a></h4>
                   <span class="side-item-meta">March 14, 2011 - 32 Comments</span>
                 </div>
 
                 <div class="side-item">
                   <img src="/images/newsthumbside5.jpg" alt="" class="side-item-thumb" />
-                  <h4><a href="/news-post.html">Diablo 3 release date rumors</a></h4>
+                  <h4><a href="#">Diablo 3 release date rumors</a></h4>
                   <span class="side-item-meta">March 14, 2011 - 32 Comments</span>
                 </div>
 

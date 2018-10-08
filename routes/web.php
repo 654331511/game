@@ -11,10 +11,15 @@
 |
 */
 //前台路由
-Route::get('/', 'IndexController@index');
-Route::get('/{page}', 'IndexController@index')->where('page','[0-9]+');
-Route::get('/news/{id}','IndexController@news');
-Route::get('/danmu','IndexController@danmu');
+Route::get('/', 'IndexController@index');//主页
+Route::get('/{page}', 'IndexController@index')->where('page','[0-9]+');//翻页
+Route::get('/news/{id}','IndexController@news');//新闻页
+Route::get('/danmu','IndexController@danmu');//弹幕
+Route::get('/ulogin','IndexController@ulogin');//用户登录
+Route::post('/ucheck','IndexController@ucheck');//用户登录验证
+Route::get('/logout','IndexController@logout');//退出登录
+
+
 //后台路由
 Route::get('/man', function () {
     return view('man.index');

@@ -486,7 +486,7 @@ a:hover { text-decoration:underline; }
 .next:hover { background-position:-44px -44px; }
 
 /***     4. Main Section     ***/
-#main-wrapper { width:920px; background:#FFF; margin:0 auto; padding:20px; overflow:hidden; }
+#main-wrapper { width:920px; background:#FFF; margin:0 auto; padding:20px; overflow:hidden;}
 #main { width:600px; margin-right:20px; float:left; }
 .section-title { background:url(/images/section-title.png) repeat; padding:9px 9px 6px 9px; margin-bottom:30px; text-shadow: 1px 1px 1px #FFF; font-size:28px; font-family:"BebasNeueRegular"; }
 
@@ -687,4 +687,17 @@ a:hover { text-decoration:underline; }
          url('/fonts/BebasNeue-webfont.ttf') format('truetype'),
          url('/fonts/BebasNeue-webfont.svg') format('svg');
     font-weight: normal;
+}
+.switch{
+	width:35px;
+	height:33px;
+	padding:8px 10px;
+	background:black;
+	opacity:.6;
+	color:white;
+	text-align:center;
+	cursor:pointer;
+	position:fixed;
+	right:0px;
+	bottom:0px;
 }

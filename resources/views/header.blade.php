@@ -12,7 +12,6 @@
 	<script type="text/javascript" src="./js/jquery.scrollTo.js"></script>
 </head>
   <body>
-
     <!-- BEGIN HEADER -->
     <div id="header-wrapper">
 
@@ -25,11 +24,19 @@
         <!-- END TOP NAVIGATION -->
 
         <!-- BEGIN SOCIAL MEDIA -->
-        <!-- <div id="social-media">
-          <a href="#">登录</a>
+        <!-- @if (request()->cookie('username') == '')
+        <div id="social-media">
+          <a href="/ulogin">登录</a>
           <span>|</span>
-          <a href="#">注册</a>
-        </div> -->
+          <a href="/register">注册</a>
+        </div>
+        @else
+        <div id="social-media">
+          <a href="#">{{ request()->cookie('username') }}</a>
+          <span>|</span>
+          <a href="/logout">退出</a>
+        </div>
+        @endif -->
         <!-- END SOCIAL MEDIA -->
 
         <!-- BEGIN LOGO -->
