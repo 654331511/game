@@ -7,7 +7,7 @@
 
 	$.fn.barrager = function(barrage) {
 		barrage = $.extend({
-			close:true,
+			close:false,
 			bottom: 0,
 			max: 10,
 			speed: 6,
@@ -29,15 +29,15 @@
 			var img = $("<img src='' >").appendTo(id + " .barrage_box .portrait");
 			img.attr('src', barrage.img);
 		}
-		
+
 		div_barrager_box.append(" <div class='z p'></div>");
 		if(barrage.close){
 
 			div_barrager_box.append(" <div class='close z'></div>");
 
 		}
-		
-		var content = $("<a title='' href='' target='_blank'></a>").appendTo(id + " .barrage_box .p");
+
+		var content = $("<a href='javascript:void(0)'></a>").appendTo(id + " .barrage_box .p");
 		content.attr({
 			'href': barrage.href,
 			'id': barrage.id
@@ -51,7 +51,7 @@
 			content.css('color', barrage.color);
 
 		}
-		
+
 		var i = 0;
 		div_barrager.css('margin-right', i);
 		var looper = setInterval(barrager, barrage.speed);
@@ -88,7 +88,7 @@
 		})
 
 	}
- 
+
 	$.fn.barrager.removeAll=function(){
 
 		 $('.barrage').remove();

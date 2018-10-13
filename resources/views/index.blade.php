@@ -10,7 +10,6 @@
         <div class="featured-inner">
           <div class="featured-arrows"></div>
           <h1><a href="#">死亡空间</a></h1>
-          <p class="featured-meta">By Sebastian Rosenkvist, March 14, 2011</p>
         </div>
       </div>
     </div>
@@ -22,7 +21,6 @@
         <div class="featured-inner">
           <div class="featured-arrows"></div>
           <h1><a href="#">子弹风暴</a></h1>
-          <p class="featured-meta">By John Doe, March 14, 2011</p>
         </div>
       </div>
     </div>
@@ -34,7 +32,6 @@
         <div class="featured-inner">
           <div class="featured-arrows"></div>
           <h1><a href="#">暗黑破坏神3</a></h1>
-          <p class="featured-meta">By Sebastian Rosenkvist, March 14, 2011</p>
         </div>
       </div>
     </div>
@@ -42,19 +39,12 @@
 
     <!-- BEGIN FEATURED ITEM -->
     <div class="featured-item" style="background:#000 url(/images/feat5.jpg) no-repeat center; height:280px;">
-
       <div class="featured-inner">
-
         <div class="featured-inner">
-
           <div class="featured-arrows"></div>
           <h1><a href="#">我的世界</a></h1>
-          <p class="featured-meta">By Sebastian Rosenkvist, March 14, 2011</p>
-
         </div>
-
       </div>
-
     </div>
     <!-- END FEATURED ITEM -->
 

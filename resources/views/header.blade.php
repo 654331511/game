@@ -24,7 +24,7 @@
         <!-- END TOP NAVIGATION -->
 
         <!-- BEGIN SOCIAL MEDIA -->
-        <!-- @if (request()->cookie('username') == '')
+        @if (request()->cookie('username') == '')
         <div id="social-media">
           <a href="/ulogin">登录</a>
           <span>|</span>
@@ -36,7 +36,7 @@
           <span>|</span>
           <a href="/logout">退出</a>
         </div>
-        @endif -->
+        @endif
         <!-- END SOCIAL MEDIA -->
 
         <!-- BEGIN LOGO -->

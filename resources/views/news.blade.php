@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>漫点玩</title>
+  <title>{{$title}}</title>
   <link rel="stylesheet" href="/css/style.css" />
   <script type="text/javascript" src="/js/jquery1.42.min.js"></script>
   <!-- <script type="text/javascript" src="/js/mobilyslider.js"></script>
@@ -26,7 +26,7 @@
         <!-- END TOP NAVIGATION -->
 
         <!-- BEGIN SOCIAL MEDIA -->
-        <!-- @if (request()->cookie('username') == '')
+        @if (request()->cookie('username') == '')
         <div id="social-media">
           <a href="/ulogin">登录</a>
           <span>|</span>
@@ -38,7 +38,7 @@
           <span>|</span>
           <a href="/logout">退出</a>
         </div>
-        @endif -->
+        @endif
         <!-- END SOCIAL MEDIA -->
 
         <!-- BEGIN LOGO -->
@@ -78,7 +78,7 @@
   </div>
   <!-- END HEADER -->
 <link rel="stylesheet" type="text/css" href="/dist/css/barrager.css">
-<script type="text/javascript" src="/dist/js/jquery.barrager.min.js"></script>
+<script type="text/javascript" src="/dist/js/jquery.barrager.js"></script>
 <script type="text/javascript">
 
 $(".switch").click(function(event) {
@@ -133,124 +133,66 @@ $(".switch").click(function(event) {
 				@foreach($newsinfo as $key)
 				<p class="post-meta">来源:{{$key->source}}&nbsp&nbsp&nbsp&nbsp作者:{{$key->author}}&nbsp&nbsp&nbsp&nbsp点击量:{{$key->clicks}}&nbsp&nbsp&nbsp&nbsp{{$key->time}}</a></p>
 				<h1 class="post-header">{{$key->title}}</h1>
-				<div class="post-thumb">
-					<img src="/images/post-img.jpg" alt="" />
-				</div>
 				<div class="post-entry">
 					{!! $key->content !!}
 				</div>
 				@endforeach
-				<!-- <div class="post-share">
-					<p>SHARE THIS POST</p>
-					<ul>
-						<li><a href="#"><img src="/images/rss-big.png" alt="" /></a></li>
-						<li><a href="#"><img src="/images/facebook-big.png" alt="" /></a></li>
-						<li><a href="#"><img src="/images/twitter-big.png" alt="" /></a></li>
-						<li><a href="#"><img src="/images/myspace.png" alt="" /></a></li>
-						<li><a href="#"><img src="/images/google.png" alt="" /></a></li>
-						<li><a href="#"><img src="/images/reddit.png" alt="" /></a></li>
-						<li><a href="#"><img src="/images/stumbleupon.png" alt="" /></a></li>
-						<li><a href="#"><img src="/images/delicious.png" alt="" /></a></li>
-						<li><a href="#"><img src="/images/newsvine.png" alt="" /></a></li>
-						<li><a href="#"><img src="/images/digg.png" alt="" /></a></li>
-						<li><a href="#"><img src="/images/technorati.png" alt="" /></a></li>
-					</ul>
-				</div> -->
 
 				<!-- BEGIN COMMENTS -->
 				<div id="comments">
-					<h3><strong>4 Comments</strong> on "Dead Space 2 breaks all sales records"</h3>
-					<ol>
+					<h3><strong>{{$num}}条评论</strong></h3>
+					<ol class="comment">
+            @foreach($comment as $key)
 						<li>
 							<div class="comment">
 								<div class="avatar">
 									<img src="/images/avatar.jpg" alt="" />
 								</div>
 								<div class="comment-details">
-									<span class="author">John Doe</span>
-									<span class="date">- March 9, 2011 at 3:43pm</span>
-									<span class="reply"><a href="#">Reply</a></span>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-								</div>
-							</div>
-							<ul>
-								<li>
-									<div class="comment">
-										<div class="avatar">
-											<img src="/images/avatar.jpg" alt="" />
-										</div>
-										<div class="comment-details">
-											<span class="author"><a href="#">John Doe</a></span>
-											<span class="date">- March 9, 2011 at 3:43pm</span>
-											<span class="reply"><a href="#">Reply</a></span>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-										</div>
-									</div>
-									<ul>
-										<li>
-											<div class="comment">
-												<div class="avatar">
-													<img src="/images/avatar.jpg" alt="" />
-												</div>
-												<div class="comment-details">
-													<span class="author">John Doe</span>
-													<span class="date">- March 9, 2011 at 3:43pm</span>
-													<span class="reply"><a href="#">Reply</a></span>
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-												</div>
-											</div>
-										</li>
-										<li>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						</li>
-
-						<li>
-							<div class="comment">
-								<div class="avatar">
-									<img src="/images/avatar.jpg" alt="" />
-								</div>
-								<div class="comment-details">
-									<span class="author">John Doe</span>
-									<span class="date">- March 9, 2011 at 3:43pm</span>
-									<span class="reply"><a href="#">Reply</a></span>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+									<span class="author">{{$key->name}}</span>
+									<span class="date">- {{$key->time}}</span>
+									<p>{{$key->info}}</p>
 								</div>
 							</div>
 						</li>
+            @endforeach
 					</ol>
 
-					<h3><strong>Leave a Comment</strong></h3>
-
-					<form action="#" id="comment-form" />
-
-						<p>
-							<input type="text" name="author" value="" />
-							<label>Name <span class="required">(required)</span></label>
+					<h3><strong>留下评论吧</strong></h3>
+          <form id="comment-form" action="post">
+            @foreach($newsinfo as $key)
+            <input type="text" name="a_id" value="{{$key->id}}" hidden="hidden">
+            @endforeach
+            <p>
+							<textarea name="info" cols="88" rows="10"></textarea>
 						</p>
 
 						<p>
-							<input type="text" name="email" value="" />
-							<label>E-mail <span class="required">(required)</span></label>
+							<input type="button" value="发布" onclick="insert()"/>
 						</p>
-
-						<p>
-							<input type="text" name="website" value="" />
-							<label>Website</label>
-						</p>
-
-						<p>
-							<textarea name="comment" cols="88" rows="10"></textarea>
-						</p>
-
-						<p>
-							<input type="submit" value="Post Comment" />
-						</p>
-
-					</form>
+          </form>
+          <script type="text/javascript">
+            function insert() {
+              $.ajax({
+                type: "POST",//方法类型
+                url: "/insertcomment" ,//url
+                data: $('#comment-form').serialize(),
+                success: function (data) {
+                    console.log(data);
+                    if (data == 2) {
+                      console.log('请登录');
+                    }else if (data == 1) {
+                      console.log('评论成功');
+                    }else {
+                      console.log('评论失败');
+                    }
+                },
+                error : function() {
+                    alert("评论失败！");
+                }
+            });
+            }
+          </script>
 
 				</div>
 				<!-- END COMMENTS -->
@@ -425,14 +367,4 @@ $(".switch").click(function(event) {
 
 
 </body>
-<script type="text/javascript">
-	// var btn = document.getElementsByClassName("switch");
-	// btn[0].addEventListener("click",toggle,false);
-	// function toggle(){
-	// 	var text = btn[0].innerHTML;
-	// 	btn[0].innerHTML = text == "关闭弹幕"?"开启弹幕":"关闭弹幕";
-	// }
-	// $.fn.barrager.removeAll();
-
-</script>
 </html>
