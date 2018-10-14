@@ -130,13 +130,11 @@ $(".switch").click(function(event) {
 
 			<!-- BEGIN POST -->
 			<div id="post">
-				@foreach($newsinfo as $key)
-				<p class="post-meta">来源:{{$key->source}}&nbsp&nbsp&nbsp&nbsp作者:{{$key->author}}&nbsp&nbsp&nbsp&nbsp点击量:{{$key->clicks}}&nbsp&nbsp&nbsp&nbsp{{$key->time}}</a></p>
-				<h1 class="post-header">{{$key->title}}</h1>
+				<p class="post-meta">{{$newsinfo['source']}}来源:{{$newsinfo['source']}}&nbsp&nbsp&nbsp&nbsp作者:{{$newsinfo['author']}}&nbsp&nbsp&nbsp&nbsp点击量:{{$newsinfo['clicks']}}&nbsp&nbsp&nbsp&nbsp{{ str_limit($newsinfo['time'],16,'') }}</a></p>
+				<h1 class="post-header">{{$newsinfo['title']}}</h1>
 				<div class="post-entry">
-					{!! $key->content !!}
+					{!! $newsinfo['content'] !!}
 				</div>
-				@endforeach
 
 				<!-- BEGIN COMMENTS -->
 				<div id="comments">
@@ -161,7 +159,7 @@ $(".switch").click(function(event) {
 					<h3><strong>留下评论吧</strong></h3>
           <form id="comment-form" action="post">
             @foreach($newsinfo as $key)
-            <input type="text" name="a_id" value="{{$key->id}}" hidden="hidden">
+            <input type="text" name="a_id" value="{{$key['id']}}" hidden="hidden">
             @endforeach
             <p>
 							<textarea name="info" cols="88" rows="10"></textarea>

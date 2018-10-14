@@ -76,7 +76,7 @@
           <h1><a href="/news/{{$key->id}}" target="_blank">{{$key->hometitle}}</a></h1>
         </div>
         <div class="news-meta-wrapper">
-          <span class="news-meta">{{$key->time}}</span>
+          <span class="news-meta">{{ str_limit($key->time,16,'') }}</span>
         </div>
         <p>{{$key->homecon}}<a href="/news/{{$key->id}}" target="_blank">查看更多</a></p>
       </div>

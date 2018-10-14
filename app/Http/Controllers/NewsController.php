@@ -11,8 +11,9 @@ class NewsController extends Controller
     //显示文章
     public function news($id)
     {
-        $newsinfo = Article::select(['id','title','content','source','author','clicks','time','check'])->where('id',$id)->get();
-        $title = $newsinfo[0]['title'];//获取标题
+        $newsinfo = Article::select(['id','title','content','source','author','clicks','time','check'])->where('id',$id)->first();
+        $newsinfo->update(['clicks'=>$newsinfo->clicks + 1]);
+        $title = $newsinfo->title;//获取标题
         $comment = $this->getcomment($id);//获取评论
         $num = count($comment);
         return view('news')->with("newsinfo",$newsinfo)->with("title",$title)->with("comment",$comment)->with("num",$num);
@@ -34,6 +35,9 @@ class NewsController extends Controller
     public function getcomment($id)
     {
         $comments = Comment::where('pid', 0)->where('a_id',$id)->orderBy('time', 'desc')->get();
+        foreach ($comments as $k) {
+          $k->time = substr($k->time,0,16);
+        }
         return $comments;
     }
 
