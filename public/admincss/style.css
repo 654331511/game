@@ -135,6 +135,28 @@ input[type="submit"]:hover {
 	color:#6C496F;
 	border:2px solid #6C496F;
 }
+input[type="button"] {
+	float: left;
+	color: #fff;
+	cursor: pointer;
+	font-weight: 900;
+	outline: none;
+	font-family: 'Raleway', sans-serif;
+	padding: 12px 0px;
+	width: 35%;
+	font-size: 18px;
+	background:#6C496F;
+	border:2px solid #6C496F;
+	border-radius: 0.5em;
+	-webkit-border-radius:0.5em;
+	-moz-border-radius:0.5em;
+	-o-border-radius:0.5em;
+}
+input[type="button"]:hover {
+	background: #fff;
+	color:#6C496F;
+	border:2px solid #6C496F;
+}
 /*----*/
 /* footer */
 .footer{
@@ -286,6 +308,12 @@ input[type="submit"]:hover {
 	padding-top: 0.4em;
 	}
 	input[type="submit"] {
+		float:none;
+	padding: 11px 0px;
+	width: 52%;
+	font-size: 15px;
+	}
+	input[type="button"] {
 		float:none;
 	padding: 11px 0px;
 	width: 52%;

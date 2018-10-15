@@ -17,9 +17,9 @@ class User extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->string('password');
-            $table->timestamps('time');
+            $table->timestamp('time')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('注册时间');
         });
         //角色表
         Schema::create('roles', function (Blueprint $table) {

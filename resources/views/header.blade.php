@@ -26,9 +26,9 @@
         <!-- BEGIN SOCIAL MEDIA -->
         @if (request()->cookie('username') == '')
         <div id="social-media">
-          <a href="/ulogin">登录</a>
+          <a href="/ulogin" target="_blank">登录</a>
           <span>|</span>
-          <a href="/register">注册</a>
+          <a href="/register" target="_blank">注册</a>
         </div>
         @else
         <div id="social-media">

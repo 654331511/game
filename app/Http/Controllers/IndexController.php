@@ -35,6 +35,29 @@ class IndexController extends Controller
                 }
         }
       }
+      //注册页面
+      public function register()
+      {
+          return view('register');
+      }
+      //注册验证
+      public function registercheck(Request $request)
+      {
+          $name = User::select(['name'])->where('name',$request->input('name'))->first();
+          if ($name) {
+              return 3;//用户已存在
+          }else {
+              $all = $request->all();
+              $all['password'] = md5($all['password']);
+              $res = User::create($all);
+              if ($res) {
+                  Cookie::queue('username',$request->input('name'),10080);
+                  return 1;//注册成功
+              }else {
+                  return 2;//注册失败
+              }
+          }
+      }
       //退出
       public function logout()
       {
