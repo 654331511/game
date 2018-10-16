@@ -32,4 +32,9 @@ class LoginController extends Controller
             }
         }
     }
+    public function adminout()
+    {
+        Cookie::queue(Cookie::forget('admin'));
+        return redirect('/adlogin');
+    }
 }
