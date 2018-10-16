@@ -24,14 +24,14 @@ class IndexController extends Controller
       public function ucheck(Request $request)
       {
         if ($request->input('name') == '' || $request->input('password') == '') {
-            return '用户名和密码不能为空';
+            return 1;//用户名密码为空
         }else {
             $users = User::where('name',$request->input('name'))->first();
             if (md5($request->input('password')) == $users->password){
                   $cookie = Cookie::queue('username',$request->input('name'),10080);
-                  return redirect('/');
+                  return 2;//登录成功
                 }else {
-                      return '密码错误';
+                      return 3;//用户名或密码错误
                 }
         }
       }

@@ -36,7 +36,6 @@
 		</div>
 	</div>
 	<div class="clear"> </div>
-  <!-- 弹出框 -->
   <script type="text/javascript">
     function reg() {
       $.ajax({
@@ -44,7 +43,6 @@
         url: "/registercheck" ,//url
         data: $('#form').serialize(),
         success: function (data) {
-            console.log(data);
             if (data == 3) {
               layer.msg('用户已存在');
             }

@@ -44,6 +44,9 @@ class NewsController extends Controller
     //添加评论
     public function insertComment(Request $request)
     {
+        if ($request->info == '') {
+            return 3;
+        }
         if (!Cookie::get('username')) {
             return 2;
         }else {

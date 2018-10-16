@@ -4,12 +4,8 @@
   <meta charset="utf-8">
   <title>{{$title}}</title>
   <link rel="stylesheet" href="/css/style.css" />
-  <script type="text/javascript" src="/js/jquery1.42.min.js"></script>
-  <!-- <script type="text/javascript" src="/js/mobilyslider.js"></script>
-  <script type="text/javascript" src="/js/init.js"></script>
-  <script type="text/javascript" src="/js/scripts.js"></script>
-	<script type="text/javascript" src="./js/jquery.fancybox-1.3.4.pack.js"></script>
-	<script type="text/javascript" src="./js/jquery.scrollTo.js"></script> -->
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="/js/layer.js"></script>
 </head>
   <body>
     <!-- 弹幕按钮 -->
@@ -144,7 +140,7 @@ $(".switch").click(function(event) {
 						<li>
 							<div class="comment">
 								<div class="avatar">
-									<img src="/images/avatar.jpg" alt="" />
+									<img src="/images/avatar.png" alt="" />
 								</div>
 								<div class="comment-details">
 									<span class="author">{{$key->name}}</span>
@@ -158,11 +154,9 @@ $(".switch").click(function(event) {
 
 					<h3><strong>留下评论吧</strong></h3>
           <form id="comment-form" action="post">
-            @foreach($newsinfo as $key)
-            <input type="text" name="a_id" value="{{$key['id']}}" hidden="hidden">
-            @endforeach
+            <input type="text" name="a_id" value="{{$newsinfo['id']}}" hidden="hidden">
             <p>
-							<textarea name="info" cols="88" rows="10"></textarea>
+							<textarea name="info" cols="88" rows="10" id="area"></textarea>
 						</p>
 
 						<p>
@@ -178,11 +172,14 @@ $(".switch").click(function(event) {
                 success: function (data) {
                     console.log(data);
                     if (data == 2) {
-                      console.log('请登录');
+                      layer.msg('请登录');
                     }else if (data == 1) {
-                      console.log('评论成功');
+                      layer.msg('评论成功');
+                      $("#area").val("");
+                    }else if (data == 3) {
+                      layer.msg('评论内容不能为空');
                     }else {
-                      console.log('评论失败');
+                      layer.msg('评论失败');
                     }
                 },
                 error : function() {

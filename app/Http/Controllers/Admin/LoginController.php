@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Admin\User;
+use Cookie;
 
 class LoginController extends Controller
 {
@@ -21,6 +22,7 @@ class LoginController extends Controller
             if (md5($request->input('password')) == $users->password){
                 $admin = $users->isadmin()->get();
                 if (!$admin->isEmpty()) {
+                    Cookie::queue('admin',$admin,10080);
                     return redirect('/man');
                 }else {
                     return '无权登录';

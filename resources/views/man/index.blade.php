@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="renderer" content="webkit">
-    <title>后台管理中心</title>
+    <title>后台管理中心{{ request()->cookie('admin') }}</title>
     <link rel="stylesheet" href="/admincss/pintuer.css">
     <link rel="stylesheet" href="/admincss/admin.css">
     <script src="/adminjs/jquery.js"></script>

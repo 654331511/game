@@ -51,8 +51,8 @@ Route::get('/info', function () {
 Route::get('/list', function(){
     return view('man.list');
 });
-Route::get('/adlogin', 'Admin\LoginController@index');
-Route::post('/login', 'Admin\LoginController@login');
+Route::get('/adlogin', 'Admin\LoginController@index');//后台登录
+Route::post('/login', 'Admin\LoginController@login');//登录验证
 Route::get('/page', function () {
     return view('man.page');
 });
