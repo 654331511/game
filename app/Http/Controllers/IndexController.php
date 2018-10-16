@@ -12,7 +12,7 @@ class IndexController extends Controller
       public function index()
       {
           $banner = Banner::select(['image','hometitle','url'])->where('check',1)->orderBy('id','desc')->take(5)->get();
-          $res = Article::select(['id','homepage','hometitle','homecon','time'])->where('check',1)->paginate(10);
+          $res = Article::select(['id','homepage','hometitle','homecon','time'])->where('check',1)->orderBy('id','desc')->paginate(10);
           return view('index')->with('content',$res)->with('banner',$banner);
       }
 }
