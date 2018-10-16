@@ -126,7 +126,7 @@ $(".switch").click(function(event) {
 
 			<!-- BEGIN POST -->
 			<div id="post">
-				<p class="post-meta">{{$newsinfo['source']}}来源:{{$newsinfo['source']}}&nbsp&nbsp&nbsp&nbsp作者:{{$newsinfo['author']}}&nbsp&nbsp&nbsp&nbsp点击量:{{$newsinfo['clicks']}}&nbsp&nbsp&nbsp&nbsp{{ str_limit($newsinfo['time'],16,'') }}</a></p>
+				<p class="post-meta">来源:{{$newsinfo['source']}}&nbsp&nbsp&nbsp&nbsp作者:{{$newsinfo['author']}}&nbsp&nbsp&nbsp&nbsp点击量:{{$newsinfo['clicks']}}&nbsp&nbsp&nbsp&nbsp{{ str_limit($newsinfo['time'],16,'') }}</a></p>
 				<h1 class="post-header">{{$newsinfo['title']}}</h1>
 				<div class="post-entry">
 					{!! $newsinfo['content'] !!}
